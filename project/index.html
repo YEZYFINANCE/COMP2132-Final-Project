@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="dice-images left">
+            <img src="images/dice1.png" alt="Dice 1">
+            <img src="images/dice2.png" alt="Dice 2">
+            <img src="images/dice3.png" alt="Dice 3">
+        </div>
+        <h1>Dice Game - SHAO BINGQING</h1>
+        <div class="dice-images right">
+            <img src="images/dice4.png" alt="Dice 4">
+            <img src="images/dice5.png" alt="Dice 5">
+            <img src="images/dice6.png" alt="Dice 6">
+        </div>
+    </div>
+    <div class="game">
+        <div class="player">
+            <h2>You</h2>
+            <div class="dice">
+                <img id="playerDice1" src="images/dice1.png" alt="Dice 1">
+                <img id="playerDice2" src="images/dice1.png" alt="Dice 2">
+            </div>
+            <div class="score" id="playerScore">Score this Round: 0</div>
+            <div class="totalScore" id="playerTotalScore">Total Score: 0</div>
+        </div>
+        <div class="computer">
+            <h2>Opponent</h2>
+            <div class="dice">
+                <img id="computerDice1" src="images/dice1.png" alt="Dice 1">
+                <img id="computerDice2" src="images/dice1.png" alt="Dice 2">
+            </div>
+            <div class="score" id="computerScore">Score this Round: 0</div>
+            <div class="totalScore" id="computerTotalScore">Total Score: 0</div>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="rollDiceButton">Roll Dice</button>
+        <button id="newGameButton">New Game</button>
+    </div>
+    <div class="instructions">
+        <div class="toggle-section">
+            <button id="toggle-instructions-btn">How to Play</button>
+            <div id="instructions-content">
+                <ul>
+                    <li>To start, click the 'Roll Dice' button.</li>
+                    <li>To advance to the next round, click the 'Roll Dice' button again.</li>
+                    <li>After three rounds, the game is over and the final score is calculated.</li>
+                    <li>If you want to play again, click the 'New Game' button or refresh the page.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="toggle-section">
+            <button id="toggle-rules-btn">Rules</button>
+            <div id="rules-content">
+                <ul>
+                    <li>If any of the player's two dice comes up as a 1 then the score for that round for the player is 0.</li>
+                    <li>If the player rolls a pair of the same numbers then the player's score is the total of the two dice times 2.</li>
+                    <li>If the player rolls any other combination of dice other than the ones mentioned above then the player's score is the total value of the two dice.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="result-popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <p id="result-message"></p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

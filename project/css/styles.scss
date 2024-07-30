@@ -1,0 +1,185 @@
+$background-color: #f0f0f0;
+$background-image: url("../images/background-image.jpg");
+$header-color: white;
+$header-font-size: 24px;
+$player-background-color: #ccffcc;
+$computer-background-color: #ffcccc;
+$dice-size: 50px;
+$dice-margin: 5px;
+$button-background-color: burlywood;
+$button-color: #333;
+$button-padding: 10px 20px;
+$button-font-size: 16px;
+$button-margin: 4px 2px;
+$border-radius: 8px;
+$instructions-border-color: rgb(148, 148, 240);
+$instructions-background-color: white;
+$instructions-padding: 10px;
+
+@mixin button-style {
+    background-color: burlywood;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+@mixin responsive-width($width-percent) {
+    width: $width-percent;
+    @media (max-width: 600px) {
+        width: 90%; // Full width on small screens
+    }
+}
+
+@mixin centered-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin padding($padding) {
+    padding: $padding;
+}
+
+@mixin margin($margin) {
+    margin: $margin;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  background-image: $background-image;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: $header-color;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+
+  h1 {
+    margin: 0;
+    font-size: $header-font-size;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.dice-images {
+  display: flex;
+  gap: 10px;
+
+  img {
+    width: $dice-size;
+    height: $dice-size;
+  }
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+  .player, .computer {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 45%;
+    box-sizing: border-box;
+    background-color: $player-background-color;
+  }
+
+  @media (max-width: 600px) {
+    .player, .computer {
+      width: 90%;
+    }
+  }
+
+  .player:nth-child(2), .computer:nth-child(2) {
+    background-color: $computer-background-color;
+  }
+
+  .dice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 20%;
+      height: auto;
+      margin: $dice-margin;
+    }
+  }
+
+  .score, .totalScore {
+    margin-top: 10px;
+  }
+}
+
+.controls {
+  margin: 20px;
+}
+
+.instructions {
+  margin-top: 20px;
+
+  .toggle-section {
+    margin-bottom: 10px;
+
+    button {
+      background-color: $button-background-color;
+      color: $button-color;
+      border: none;
+      padding: $button-padding;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: $button-font-size;
+      margin: $button-margin;
+      cursor: pointer;
+      border-radius: $border-radius;
+    }
+
+    #instructions-content, #rules-content {
+      display: none;
+      text-align: left;
+      border: 1px solid $instructions-border-color;
+      padding: $instructions-padding;
+      border-radius: $border-radius;
+      background-color: $instructions-background-color;
+    }
+  }
+}
+
+button {
+  background-color: $button-background-color;
+  color: $button-color;
+  border: none;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: $button-font-size;
+  margin: $button-margin;
+  cursor: pointer;
+  border-radius: $border-radius;
+}

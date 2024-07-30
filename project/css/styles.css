@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  background-image: url("../images/background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.dice-images {
+  display: flex;
+  gap: 10px;
+}
+.dice-images img {
+  width: 50px;
+  height: 50px;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.game .player, .game .computer {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 45%;
+  box-sizing: border-box;
+  background-color: #ccffcc;
+}
+@media (max-width: 600px) {
+  .game .player, .game .computer {
+    width: 90%;
+  }
+}
+.game .player:nth-child(2), .game .computer:nth-child(2) {
+  background-color: #ffcccc;
+}
+.game .dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game .dice img {
+  width: 20%;
+  height: auto;
+  margin: 5px;
+}
+.game .score, .game .totalScore {
+  margin-top: 10px;
+}
+
+.controls {
+  margin: 20px;
+}
+
+.instructions {
+  margin-top: 20px;
+}
+.instructions .toggle-section {
+  margin-bottom: 10px;
+}
+.instructions .toggle-section button {
+  background-color: burlywood;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.instructions .toggle-section #instructions-content, .instructions .toggle-section #rules-content {
+  display: none;
+  text-align: left;
+  border: 1px solid rgb(148, 148, 240);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+button {
+  background-color: burlywood;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}/*# sourceMappingURL=styles.css.map */
